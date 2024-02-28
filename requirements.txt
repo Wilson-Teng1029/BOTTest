@@ -1,9 +1,2 @@
-argon2-cffi==21.3.0
-argon2-cffi-bindings==21.2.0
-asttokens==2.0.5
-attrs==21.4.0
-backcall==0.2.0
-beautifulsoup4==4.11.1
-bleach==4.1.0
-certifi==2022.9.24
-ipython-genutils==0.2.0
+gunicorn
+Flask==2.2.2
