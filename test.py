@@ -5,12 +5,7 @@ from linebot.models import MessageEvent, TextSendMessage
 
 from flask import Flask, request, abort
 
-#from linebot import (
-#    LineBotApi, WebhookHandler
-#)
-#from linebot.exceptions import (
-#    InvalidSignatureError
-#)
+from urllib.parse import quote as url_quote
 from linebot.models import *
 
 app = Flask(__name__)
