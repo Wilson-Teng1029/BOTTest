@@ -1,11 +1,20 @@
+from django.shortcuts import render
+from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseForbidden
+from django.views.decorators.csrf import csrf_exempt
+from django.conf import settings
+ 
+from linebot import LineBotApi, WebhookParser
+from linebot.exceptions import InvalidSignatureError, LineBotApiError
+from linebot.models import MessageEvent, TextSendMessage
+
 from flask import Flask, request, abort
 
-from linebot import (
-    LineBotApi, WebhookHandler
-)
-from linebot.exceptions import (
-    InvalidSignatureError
-)
+#from linebot import (
+#    LineBotApi, WebhookHandler
+#)
+#from linebot.exceptions import (
+#    InvalidSignatureError
+#)
 from linebot.models import *
 
 app = Flask(__name__)
