@@ -42,20 +42,13 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def pretty_echo(event):
     
-    if event.source.user_id != "U0125668ecfcfd02241e1a305c47ab5a8":
+    if event.source.userId != "U0125668ecfcfd02241e1a305c47ab5a8":
         
-        # Phoebe 愛唱歌
-        pretty_note = '♫♪♬'
-        pretty_text = ''
-        
-        for i in event.message.text:
-        
-            pretty_text += i
-            pretty_text += random.choice(pretty_note)
-    
+        reply_text = '嗨 我在學你講話話喔~' + event.message.text
+
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text=pretty_text)
+            TextSendMessage(text=reply_text)
         )
 
 import os
