@@ -35,15 +35,12 @@ def callback():
 # 學你說話
 @handler.add(MessageEvent, message=TextMessage)
 def pretty_echo(event):
-    
-    if event.source.userId != "U0125668ecfcfd02241e1a305c47ab5a8":
-        
-        reply_text = '嗨 我在學你講話話喔~' + event.message.text
+    reply_text = '嗨 我在學你講話話喔~' + event.message.text
 
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=reply_text)
-        )
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=reply_text)
+    )
 
 import os
 if __name__ == "__main__":
