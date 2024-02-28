@@ -15,12 +15,6 @@ line_bot_api = LineBotApi('GBdQf63ap1BVc6Q2aG7Q7XyubnHJmcYUCsKfe2RXELDCDPhCPzvGa
 # Channel Secret
 handler = WebhookHandler('68552136aebf1905f0eb97bb37d0a5d0')
 
-# 處理訊息
-@handler.add(MessageEvent, message=TextMessage)
-def handle_message(event):
-    message = TextSendMessage(text=event.message.text)
-    line_bot_api.reply_message(event.reply_token, message)
-
 # 接收 LINE 的資訊
 @app.route("/callback", methods=['POST'])
 def callback():
